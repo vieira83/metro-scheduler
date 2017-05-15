@@ -6,15 +6,25 @@ from metro.models import Account
 
 
 class AccountSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(required=False)
+    username = serializers.CharField(required=False)
+    first_name = serializers.CharField(required=False)
+    last_name = serializers.CharField(required=False)
     password = serializers.CharField(write_only=True, required=False)
     confirm_password = serializers.CharField(write_only=True, required=False)
+    congregation_id = serializers.IntegerField(required=False)
 
     class Meta:
         model = Account
         fields = ('id', 'email', 'username', 'created_at', 'updated_at',
-                  'first_name', 'last_name', 'tagline', 'password',
-                  'confirm_password',)
+                  'first_name', 'last_name', 'password',
+                  'confirm_password', 'congregation_id')
         read_only_fields = ('created_at', 'updated_at',)
+
+        lookup_field = 'username'
+        extra_kwargs = {
+            'url': {'lookup_field': 'username'}
+        }
 
         def create(self, validated_data):
             return Account.objects.create(**validated_data)

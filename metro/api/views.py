@@ -12,10 +12,17 @@ from rest_framework import permissions, viewsets, status
 
 # Create your views here.
 class AccountViewSet(viewsets.ModelViewSet):
+    """
+        This viewset automatically provides `list`, `create`, `retrieve`,
+        `update` and `destroy` actions.
+    """
 
     lookup_field = 'username'
+    # http://stackoverflow.com/questions/27963899/django-rest-framework-using-dot-in-url
+    lookup_value_regex = '[0-9a-z.@]+'
     queryset = Account.objects.all()
     serializer_class = AccountSerializer
+
 
     def get_permissions(self):
         if self.request.method in permissions.SAFE_METHODS:
@@ -40,10 +47,8 @@ class AccountViewSet(viewsets.ModelViewSet):
         }, status=status.HTTP_400_BAD_REQUEST)
 
     def list(self, request):
-        pass
+        serializer = self.serializer_class(self.queryset, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
-    def create(self, request):
-        pass
-
-    def retrieve(self, request, pk=None):
-        pass
+    # def retrieve(self, request, pk=None):
+    #     pass
