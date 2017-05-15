@@ -3,24 +3,35 @@
 ## Set-up Local environment
 
 ### Set up a virtual environment
+
 1. The virtualenv tool keeps the dependencies required by different projects isolated, by creating virtual environments for them. To use it, install virtualenv.
+
     $ pip install virtualenv
+
 2. In the top-level directory of your project, create a virtual environment for your project.
+
     $ virtualenv metro
+
 3. Activate the virtual environment.
+
 If you are not using Windows, run this command.
+
     $ source metro/bin/activate
 
 ### Install dependencies
 
 Install all the dependencies
+
    $ pip install -r  requirements.txt
 
 ### Setup Database with posgres
 
   1. Install PostgreSQL
+
   2. export PATH=/Applications/Postgres.app/Contents/Versions/9.6/bin:$PATH to bash_profile
+
   3. Create a PostgreSQL Database:
+
       3.1 Go to PSQL command line:
 
         $ psql -h localhost
@@ -39,7 +50,7 @@ Install all the dependencies
         $ GRANT ALL PRIVILEGES ON DATABASE metro_db TO myusername;
 
   4. Configure the Django Database Settings
-  
+
      $ 'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': get_env_variable('DATABASE_NAME'),
@@ -53,6 +64,7 @@ Install all the dependencies
   7.  python manage.py migrate
 
 ## Set-up Heroku environment
+
 1. Follow the steps below
 - https://devcenter.heroku.com/articles/deploying-python
 
