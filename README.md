@@ -1,6 +1,6 @@
 # Metro Schedule App
 
-## Set-up Local environment
+## Set-up Local environment (Backend)
 
 ### Set up a virtual environment
 
@@ -59,41 +59,17 @@ Install all the dependencies
     }
 
     Run migration and create super user
-    
+
     $ python manage.py createsuperuser
     $ python manage.py makemigrations
     $ python manage.py migrate
 
-## Set-up Heroku environment
+### Set-up Heroku environment
 
-1. Follow the steps below
-- https://devcenter.heroku.com/articles/deploying-python
+1. Follow the steps below:
+   - https://devcenter.heroku.com/articles/deploying-python
 
-## Features
-
-- Production-ready configuration for Static Files, Database Settings, Gunicorn, etc.
-- Enhancements to Django's static file serving functionality via WhiteNoise.
-- Latest Python 3.6 runtime environment. 
-
-## How to Use
-
-To use this project, follow these steps:
-
-1. Create your working environment.
-2. Install Django (`$ pip install django`)
-3. Create a new project using this template
-
-## Creating Your Project
-
-Using this template to create a new Django app is easy::
-
-    $ django-admin.py startproject --template=https://github.com/heroku/heroku-django-template/archive/master.zip --name=Procfile helloworld
-
-(If this doesn't work on windows, replace `django-admin.py` with `django-admin`)
-
-You can replace ``helloworld`` with your desired project name.
-
-## Deployment to Heroku
+Deployment to Heroku
 
     $ git init
     $ git add -A
@@ -104,11 +80,26 @@ You can replace ``helloworld`` with your desired project name.
 
     $ heroku run python manage.py migrate
 
-See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
+2. Troubleshoot commands:
+   -
+   - heroku pg:info
+   - heroku logs
 
-## Using Python 2.7?
 
-Just update `runtime.txt` to `python-2.7.13` (no trailing spaces or newlines!).
+## SETUP FRONTEND ENVIRONMENT
+
+### npm init
+### npm install
+### gulp build-css
+
+
+
+## Creating Your Project
+
+Using this template to create a new Django app is easy::
+
+    $ django-admin.py startproject --template=https://github.com/heroku/heroku-django-template/archive/master.zip --name=Procfile helloworld
+
 
 
 ## License: MIT
