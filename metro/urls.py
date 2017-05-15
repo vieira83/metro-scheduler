@@ -9,6 +9,7 @@ from rest_framework import routers
 
 router = routers.SimpleRouter()
 router.register(r'accounts', AccountViewSet)
+router.register(r'login', AccountViewSet)
 
 urlpatterns = [
     url(r'^api/', include(router.urls)),

@@ -1,0 +1,377 @@
+
+/*****************************************
+        STANDARD CSS - USING SASS
+*****************************************/
+
+
+/**************************************
+            COLORS Palette
+***************************************/
+$metro-dark-blue: #4a90e2;
+$metro-regular-blue: #5B9DE4;
+$metro-light-blue: #80B1EB;
+
+$metro-dark-green: #5cb85c;
+$metro-regular-green: #87ce87;
+$metro-light-green: #b6e9b6;
+
+$metro-dark-orange: #ff9c00;
+$metro-regular-orange: #ffc160;
+$metro-light-orange: #ffd99d;
+
+$metro-dark-purple: #d14ae2;
+$metro-regular-purple: #efa7f8;
+
+$metro-dark-red: #d9534f;
+$metro-regular-red: #ea7c79;
+$metro-light-red: #fc9c99;
+
+$metro-dark-grey: #333333;
+$metro-regular-grey: #999999;
+$metro-light-grey: #aaa;
+$metro-ligther-grey: #d8d8d8;
+
+
+/********************************************
+        OTHER COLORS
+        Fonts, inputs
+********************************************/
+$font-black: #000000;
+$font-white: #ffffff;
+$font-dark-white:#EFEFEF;
+$font-dark-grey: #515151;
+$font-regular-grey:#666666;
+$font-caption-light-grey: #999999;
+$input-border-light-color:#cccccc;
+
+
+/********************************************
+          Fonts
+********************************************/
+
+$font-raleway-light:'ralewaylight';
+$font-raleway-bold: 'ralewaybold';
+
+.ralewaylight {
+  font-family: $font-raleway-light;
+}
+
+.ralewaybold {
+  font-family: $font-raleway-bold;
+}
+
+/*********************************************
+          MIXINS
+*********************************************/
+/*this is a MIXIN, changing it will change other
+classes that use it*/
+@mixin caption {
+  color: $font-caption-light-grey;
+  text-transform: uppercase;
+  display: block;
+  font-size: 13px;
+}
+
+@mixin label-caption {
+  @include caption;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+@mixin close-icon {
+  position: absolute;
+  left: auto;
+  top: 10px;
+  right: 10px;
+  width: auto;
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+  float: right;
+  font-size: 36px;
+  line-height: 1;
+  color: $font-black;
+  text-shadow: 0 1px 0 $font-white;
+}
+
+
+
+
+
+
+/********************************************
+        GENERAL STYLE
+*********************************************/
+
+p {
+  font-family: $font-raleway-light;
+  margin: 0 0 10px;
+}
+
+a {}
+
+
+/*********************************************
+            HEADERS  STYLE
+**********************************************/
+
+h1, h2, h3, h4,h5,h6 {
+  font-family: $font-raleway-bold;
+  color: $font-dark-grey;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+
+/*********************************************
+            PAGE SECTION  STYLE
+
+ .page-title should be h1
+ .section-title should be h2
+**********************************************/
+h1.page-title {
+  font-size:28px;
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 5px solid #d8d8d8;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+h2.section-title {
+  display: inline-block;
+  font-size:24px;
+  padding-bottom: 5px;
+  margin-bottom: 1rem;
+}
+
+.cursor_pointer {
+  cursor: pointer;
+}
+/*********************************************
+              FORMS  STYLE
+
+   form-label should be h3
+**********************************************/
+.form-label {
+  font-family: $font-raleway-bold
+}
+
+h3.form-label {
+  font-size:18px;
+}
+
+.label-caption-inline {
+  @include label-caption;
+  margin-left: 2px;
+  display: inline;
+}
+
+li.list-entry {
+  font-family: $font-raleway-bold;
+  .entry-email {
+    font-family: $font-raleway-light;
+  }
+}
+textarea {
+  border: 1px solid $input-border-light-color;
+  border-radius: 4px;
+  width:100%;
+}
+input {
+  &[type="text"], &[type="search"], &[type="url"]  {
+  font: 16px ralewaybold;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  padding: 10px 15px;
+
+  &[type="checkbox"] {
+    font-size: 22px;
+  }
+ }
+}
+.input-required {
+  color: red;
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 30px;
+  height: 22px;
+  width: 20px;
+  overflow: hidden;
+}
+.has-error{
+  input {
+    border-color: #a94442;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  }
+}
+
+/*********************************************
+              MODALS STYLE
+
+      .modal-title should be h2
+
+ NOTE: MODALS SHOULD BE FULL-SCREEN ON SMALL DEVICES
+       AND MAX-WIDTH: 750PX ELSEWHERE
+**********************************************/
+.modal-dialog {
+  width: 750px;
+  &medium {
+    width: 650px;
+  }
+  &.small {
+    width: 450px;
+  }
+
+  .modal-content, .modal-body {
+    width: 100%;
+  }
+  .content {
+    margin-top: 2rem;
+  }
+
+  .modal-header {
+
+  }
+  .close {
+    @include close-icon;
+  }
+  h2.modal-title {
+    font-size: 24px;
+    margin-bottom: 0;
+
+  }
+
+  .innerwrap {
+    padding: 30px;
+    div.modal-purpose {
+      .modal-icon {
+      }
+    }
+    div.modal-action {
+
+    }
+  }
+  .popup_hdr {
+    padding:0;
+  }
+}
+
+
+
+/************************************************
+                BUTTONS STYLE
+
+ use: Cancel - btn btn-empty; Submit- btn btn-cta; Disabled - btn-disabled
+**************************************************/
+.btn {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-transform: uppercase;
+  min-width: 125px;
+  margin-top:1rem;
+
+
+
+  &.btn-cta {
+    background-color: $metro-dark-blue;
+    border: 2px solid $metro-dark-blue;
+    color: $font-white;
+    font-size: 18px;
+    &:hover, &:active {
+      color: #fff!important;
+      background: darken($metro-dark-blue, 5%);
+      border-color: darken($metro-dark-blue, 5%);
+    }
+    &.focus, &:focus{
+      color: #fff!important;
+      text-decoration: none;
+    }
+  }
+
+  &.btn-special {
+    background-color: $metro-dark-orange;
+    border: none;
+    color: $metro-dark-grey;
+    font-size: 18px;
+  }
+
+  &.btn-empty {
+    background-color: transparent;
+    border: 2px solid $font-regular-grey;
+    color: $font-regular-grey;
+    font-size: 18px;
+  }
+
+  &.btn-light {
+    border: 1px solid $font-dark-white;
+  }
+  &.btn-disabled {
+    background: rgba(204, 204, 204, .25);
+    border: 2px solid rgba(204, 204, 204, .25);
+    color: rgba(204, 204, 204, 0.35);
+    font-size: 18px;
+    text-shadow: none;
+    &:hover {
+      color: rgba(204, 204, 204, 0.35);
+    }
+  }
+
+  &.btn-sm {
+    font-size: 14px;
+    min-width: auto;
+  }
+  &.btn-lg {
+    font-size: 24px;
+  }
+
+  &.btn-xl {
+    font-size: 36px;
+  }
+}
+
+
+
+
+
+/*********************************************
+          FOOTER
+*********************************************/
+
+
+
+
+
+/***********************************
+          MISC
+************************************/

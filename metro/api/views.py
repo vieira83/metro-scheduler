@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from metro.models import Account
 from metro.api.permissions import IsAccountOwner
-from metro.api.account_serializers import AccountSerializer
+from metro.api.account_serializers import AccountSerializer, LoginSerializer
 
 from rest_framework.response import Response
 from rest_framework import permissions, viewsets, status
@@ -45,6 +45,25 @@ class AccountViewSet(viewsets.ModelViewSet):
             'status': 'Bad request',
             'message': 'Account could not be created with received data.'
         }, status=status.HTTP_400_BAD_REQUEST)
+
+    def list(self, request):
+        serializer = self.serializer_class(self.queryset, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    # def retrieve(self, request, pk=None):
+    #     pass
+
+
+class LoginViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+        This viewset automatically provides `list`, `retrieve` actions.
+    """
+
+    lookup_field = 'username'
+    # http://stackoverflow.com/questions/27963899/django-rest-framework-using-dot-in-url
+    lookup_value_regex = '[0-9a-z.@]+'
+    queryset = Account.objects.all()
+    serializer_class = LoginSerializer
 
     def list(self, request):
         serializer = self.serializer_class(self.queryset, many=True)

@@ -45,3 +45,25 @@ class AccountSerializer(serializers.ModelSerializer):
             update_session_auth_hash(self.context.get('request'), instance)
 
             return instance
+
+
+class LoginSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(required=False)
+    username = serializers.CharField(required=False)
+    first_name = serializers.CharField(required=False)
+    last_name = serializers.CharField(required=False)
+    password = serializers.CharField(write_only=True, required=False)
+    confirm_password = serializers.CharField(write_only=True, required=False)
+    congregation_id = serializers.IntegerField(required=False)
+
+    class Meta:
+        model = Account
+        fields = ('id', 'email', 'username', 'created_at', 'updated_at',
+                  'first_name', 'last_name', 'password',
+                  'confirm_password', 'congregation_id')
+        read_only_fields = ('created_at', 'updated_at',)
+
+        lookup_field = 'username'
+        extra_kwargs = {
+            'url': {'lookup_field': 'username'}
+        }

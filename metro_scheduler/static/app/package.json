@@ -4,13 +4,17 @@
   "description": "",
   "main": "gulpfile.js",
   "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
     "gulp": "^3.9.1",
     "gulp-webpack": "^1.5.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.18.11",
+    "concurrently": "^3.4.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
     "gulp-livereload": "^3.8.1",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.0",
@@ -19,7 +23,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack"
+    "start": "concurrently --kill-others 'gulp browserSync' 'python manage.py runserver'"
   },
   "author": "",
   "license": "ISC"
