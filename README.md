@@ -4,11 +4,10 @@
 
 ### Set up a virtual environment
 
-The virtualenv tool keeps the dependencies required by different projects isolated, by creating virtual environments for them. To use it, install virtualenv.
-
+The virtualenv tool keeps the dependencies required by different projects isolated
     $ pip install virtualenv
 
-In the top-level directory of your project, create a virtual environment for your project.
+create a virtual environment for the project.
 
     $ virtualenv metro
 
@@ -16,13 +15,13 @@ Activate the virtual environment.
 
     $ source metro/bin/activate
 
-### Install dependencies
+### Install backend dependencies
 
-Install all the dependencies
+Install all the python dependencies
 
     $ pip install -r  requirements.txt
 
-### Setup Database with posgres
+### Setup Database with PostgreSQL
 
     1. Install PostgreSQL
 
@@ -40,23 +39,14 @@ Install all the dependencies
 
     Create Database owner
 
-        $ CREATE ROLE myusername WITH LOGIN PASSWORD 'mypassword';
-        $ ALTER USER myusername CREATEDB;
+        $ CREATE ROLE myuser WITH LOGIN PASSWORD 'mypassword';
+        $ ALTER USER myuser CREATEDB;
 
-    Grant all privileges to user:
+    Grant all privileges to myuser:
 
-        $ GRANT ALL PRIVILEGES ON DATABASE metro_db TO myusername;
+        $ GRANT ALL PRIVILEGES ON DATABASE metro_db TO myuser;
 
-    Configure the Django Database Settings
-
-       $ 'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': get_env_variable('DATABASE_NAME'),
-        'USER': get_env_variable('DATABASE_USER'),
-        'PASSWORD': get_env_variable('DATABASE_PASSWORD'),
-        'HOST': '',
-        'PORT': '',
-    }
+    Configure the Django Database Settings (configured)
 
     Run migration and create super user
 
@@ -66,8 +56,7 @@ Install all the dependencies
 
 ### Set-up Heroku environment
 
-1. Follow the steps below:
-   - https://devcenter.heroku.com/articles/deploying-python
+- https://devcenter.heroku.com/articles/deploying-python
 
 Deployment to Heroku
 
@@ -80,18 +69,21 @@ Deployment to Heroku
 
     $ heroku run python manage.py migrate
 
-2. Troubleshoot commands:
-   -
+Heroku Troubleshoot commands:
    - heroku pg:info
    - heroku logs
 
 
 ## SETUP FRONTEND ENVIRONMENT
+Navigate to frontend folder:
 
-### npm init
-### npm install
-### gulp build-css
+    $ cd metro_scheduler/static/app/
 
+Initialize node and install frontend dependencies
+
+    $ npm init
+    $ npm install
+    $ gulp build-css
 
 
 ## Creating Your Project

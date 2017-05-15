@@ -13,6 +13,8 @@ router.register(r'accounts', AccountViewSet)
 urlpatterns = [
     url(r'^api/', include(router.urls)),
     url(r'^$', views.homepage, name='index'),
+    url(r'^(?P<path>.*)/$', views.homepage),
+
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
