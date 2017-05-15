@@ -4,12 +4,12 @@
 
 ### Set up a virtual environment
 1. The virtualenv tool keeps the dependencies required by different projects isolated, by creating virtual environments for them. To use it, install virtualenv.
-$ pip install virtualenv
+    $ pip install virtualenv
 2. In the top-level directory of your project, create a virtual environment for your project.
-$ virtualenv metro
+    $ virtualenv metro
 3. Activate the virtual environment.
 If you are not using Windows, run this command.
-$ source metro/bin/activate
+    $ source metro/bin/activate
 
 ### Install dependencies
 $ pip install -r  requirements.txt
