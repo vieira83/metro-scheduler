@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>Homepage</title>
+    <script type="text/javascript"src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript" src="{% static 'app/js/libs/angular-route.min.js' %}"></script>
+     <script type="text/javascript" src="{% static 'app/js/app.module.js' %}"></script>
+    <base href='/'></base>
+</head>
+
+<body>Vlad
+    <div ng-view></div>
+</body>
+</html>
