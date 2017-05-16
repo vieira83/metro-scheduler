@@ -1,0 +1,73 @@
+/*****************************************
+        Main Nav CSS - USING SASS
+*****************************************/
+
+$metro-nav-yellow: #fad399;
+$metro-regular-orange:#d8765d;
+$metro-light-orange: lighten(#d8765d, 5%);
+
+.main-nav {
+    margin-bottom: 10px;
+    height: 85px;
+    padding: 20px 0 10px 0;
+    background: $metro-regular-orange;
+
+    .navbar-header {
+        color: #fff;
+        h1.title {
+            margin:0;
+            font-family: MerriWeather;
+            font-style: italic;
+            font-weight: 900;
+            font-kerning: initial;
+            font-variant: inherit;
+            font-stretch: extra-expanded;
+            letter-spacing: -0.3rem;
+            a {
+                border: 3px solid #dd8772;
+                border-top-right-radius: 25px;
+                border-bottom-left-radius: 25px;
+                padding: 0 1rem;
+                background: #dd8772;
+                &:hover {
+                    text-transform:none;
+                }
+            }
+        }
+        img.logo {
+            position: relative;
+            width: 50px;
+            margin-top: -25px;
+        }
+    }
+
+    .navbar-nav {
+        li>a {
+           color: $metro-nav-yellow;
+           font-size: 16px;
+           padding: 10px 15px;
+           margin-right:10px;
+           &:focus, &:hover {
+               background-color: $metro-light-orange;
+               border-radius: 30px;
+           }
+        }
+
+        .nav-item {
+            .nav-link.nav-login {
+                border: 2px solid $metro-nav-yellow;
+                padding: 7px 15px 6px;
+                border-radius: 30px;
+                color: $metro-nav-yellow;
+                text-decoration: none;
+                font-size: 1em;
+                margin-left :15px;
+                float: right;
+                font-weight: 600;
+            }
+        }
+    }
+    .white-back {
+        color:#fff;
+    }
+}

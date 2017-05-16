@@ -16,8 +16,8 @@ $metro-regular-green: #87ce87;
 $metro-light-green: #b6e9b6;
 
 $metro-dark-orange: #ff9c00;
-$metro-regular-orange: #ffc160;
-$metro-light-orange: #ffd99d;
+$metro-regular-orange: #d8765d;
+$metro-light-orange: lighten(#d8765d, 5%);
 
 $metro-dark-purple: #d14ae2;
 $metro-regular-purple: #efa7f8;
@@ -31,6 +31,7 @@ $metro-regular-grey: #999999;
 $metro-light-grey: #aaa;
 $metro-ligther-grey: #d8d8d8;
 
+$metro-white: #fff;
 
 /********************************************
         OTHER COLORS
@@ -48,23 +49,18 @@ $input-border-light-color:#cccccc;
 /********************************************
           Fonts
 ********************************************/
+$font-main: 'lato';
+$font-roboto:'Roboto';
+$font-merrid: 'Merriweather';
 
-$font-raleway-light:'ralewaylight';
-$font-raleway-bold: 'ralewaybold';
 
-.ralewaylight {
-  font-family: $font-raleway-light;
-}
-
-.ralewaybold {
-  font-family: $font-raleway-bold;
-}
 
 /*********************************************
           MIXINS
 *********************************************/
 /*this is a MIXIN, changing it will change other
 classes that use it*/
+
 @mixin caption {
   color: $font-caption-light-grey;
   text-transform: uppercase;
@@ -72,7 +68,7 @@ classes that use it*/
   font-size: 13px;
 }
 
-@mixin label-caption {
+.label-caption {
   @include caption;
   font-size: 12px;
   margin-bottom: 10px;
@@ -96,16 +92,12 @@ classes that use it*/
 }
 
 
-
-
-
-
 /********************************************
         GENERAL STYLE
 *********************************************/
 
 p {
-  font-family: $font-raleway-light;
+  font-family: $font-main;
   margin: 0 0 10px;
 }
 
@@ -117,7 +109,7 @@ a {}
 **********************************************/
 
 h1, h2, h3, h4,h5,h6 {
-  font-family: $font-raleway-bold;
+  font-family: $font-roboto;
   color: $font-dark-grey;
 }
 
@@ -177,7 +169,7 @@ h2.section-title {
    form-label should be h3
 **********************************************/
 .form-label {
-  font-family: $font-raleway-bold
+  font-family: $font-main
 }
 
 h3.form-label {
@@ -185,15 +177,17 @@ h3.form-label {
 }
 
 .label-caption-inline {
-  @include label-caption;
+  @include caption;
   margin-left: 2px;
   display: inline;
+  font-size: 12px;
+  margin-bottom: 10px;
 }
 
 li.list-entry {
-  font-family: $font-raleway-bold;
+  font-family: $font-main;
   .entry-email {
-    font-family: $font-raleway-light;
+    font-family: $font-main;
   }
 }
 textarea {
@@ -203,7 +197,7 @@ textarea {
 }
 input {
   &[type="text"], &[type="search"], &[type="url"]  {
-  font: 16px ralewaybold;
+  font: 16px lato;
   border: 1px solid #CCC;
   border-radius: 5px;
   padding: 10px 15px;
@@ -229,6 +223,7 @@ input {
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
   }
 }
+
 
 /*********************************************
               MODALS STYLE
@@ -282,7 +277,6 @@ input {
 }
 
 
-
 /************************************************
                 BUTTONS STYLE
 
@@ -292,7 +286,7 @@ input {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 16px;
-  padding: 10px 15px;
+  padding: 8px 15px;
   border-radius: 5px;
   border-color: transparent;
   display: inline-block;
@@ -301,6 +295,18 @@ input {
   min-width: 125px;
   margin-top:1rem;
 
+  &.btn-primary {
+    color: $metro-white;
+    background-color: $metro-light-orange;
+    border-color: $metro-light-orange;
+    border-bottom: 3px solid $metro-regular-orange;
+    border-radius: 30px;
+    &:hover {
+        background-color: $metro-regular-orange;
+        border-color: $metro-regular-orange;
+        border-bottom: 3px solid $metro-light-orange;
+    }
+  }
 
 
   &.btn-cta {

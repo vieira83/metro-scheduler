@@ -1,20 +1,8 @@
 /**
 * Authentication
 */
-(function () {
-  'use strict';
-
-  angular
-    .module('metroApp')
-    .factory('Authentication', Authentication);
-
-  Authentication.$inject = ['$cookies', '$http'];
-
-  /**
-  * @namespace Authentication
-  * @returns {Factory}
-  */
-  function Authentication($cookies, $http) {
+angular.module('metroApp')
+  .factory('Authentication', ['$cookies', '$http', function Authentication($cookies, $http) {
     /**
     * @name Authentication
     * @desc The Factory to be returned
@@ -50,5 +38,4 @@
         password: password,
       });
     }
-  }
-})();
+}]);

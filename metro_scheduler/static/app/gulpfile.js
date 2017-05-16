@@ -27,10 +27,9 @@ gulp.task('html', function () {
     .pipe(livereload());
 });
 
-gulp.watch('build-js', function (files) {
-    console.log("update JS files")
+gulp.watch('build-js', function () {
     gulp.src('./js/**/*.js')
-    .pipe(livereload());
+       .pipe(livereload());
 });
 
 gulp.task('build-css', function(files) {
@@ -46,14 +45,19 @@ gulp.task('build-css', function(files) {
 });
 
 gulp.task('styles', function () {
-  return gulp.src('./assets/**/*.scss')
+  return gulp.src('./js/**/*.scss')
     .pipe(sass())
     .pipe(concat('bundle.css'))
     .pipe(autoprefixer())
     .pipe(gulp.dest('./build'));
 });
 
-
+gulp.task('combine', function() {
+   return gulp.src('./js/**/*.js')
+    .pipe(concat('ng-app-controllers.js'))
+    .pipe(gulp.dest('./build/'))
+    .pipe(livereload()); // Add right here!!
+});
 
 gulp.task('watch', function() {
     // Watch the input folder for change,
@@ -66,11 +70,11 @@ gulp.task('watch', function() {
         port: 8000
         // port: 35729
     });
+    gulp.watch('./assets/**/*.scss',['build-css']);
     gulp.watch('./js/**/*.scss',['build-css']);
     gulp.watch('./js/**/*.js', ['build-js']);
 //    gulp.watch().on('change', gulpLivereload.changed)
 });
 
-//Watch task
-
-gulp.task('default', ['watch']);
+//default task
+gulp.task('default', ['watch', 'combine']);

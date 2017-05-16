@@ -1,3 +1,8 @@
-@import "general/standards.scss";
+@import "./js/shared/general/standards.scss";
+@import "./js/shared/general/main.scss";
 @import "./js/components/login/login.scss";
 @import "./js/components/home/home.scss";
+@import "./js/shared/mainNav/mainNav.scss";
+@import "./js/shared/footer/footer.scss";
+@import "./js/components/dashboard/dashboard.scss";
+
