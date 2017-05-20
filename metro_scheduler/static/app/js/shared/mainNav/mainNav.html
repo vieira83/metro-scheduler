@@ -2,7 +2,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="row">
-                <div class="navbar-header col-sm-6">
+                <div class="navbar-header col-sm-5">
                     <a class="navbar-brand" href="#">
                         <img class="logo" src="http://engineroom.trackmaven.com/theme/images/logo@2x.png">
                     </a>
@@ -10,20 +10,35 @@
                         <a class="white-back" href="http://engineroom.trackmaven.com/">Metro Scheduler</a>
                     </h1>
                 </div>
-                <ul class="nav navbar-nav col-sm-6">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#"><span class="glyphicon glyphicon-envelope"></span> Contact Us </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><span class="glyphicon glyphicon-wrench"></span>   Support</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-                </li>
-                <li class="nav-item navbar-right">
-                    <a class="nav-link nav-login" href="/register"><span class="glyphicon glyphicon-user"></span>  Register</a>
-                </li>
-            </ul>
+                <div class="col-sm-7">
+                    <ul class="nav navbar-nav" ng-model="currentUser">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard" ng-class="menuClass('dashboard')"
+                           ng-if="isAuthenticated(currentUser)"><span class="glyphicon glyphicon-user"></span> Dashboard</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" ng-class="menuClass('contact')"><span
+                                class="glyphicon glyphicon-envelope"></span> Contact Us </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" ng-class="menuClass('support')"><span
+                                class="glyphicon glyphicon-wrench"></span> Support</a>
+                    </li>
+                    <li class="nav-item navbar-right">
+                        <a class="nav-link" href="/login" ng-class="menuClass('login')"
+                           ng-if="!isAuthenticated(currentUser)"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                        <a class="nav-link nav-login" ng-click="logout()" ng-if="isAuthenticated(currentUser)">Logout
+                            <span class="glyphicon glyphicon-log-out"></span></a>
+                    </li>
+                    <li class="nav-item navbar-right">
+                        <a class="nav-link nav-login" href="/register" ng-class="menuClass('register')"
+                           ng-if="!isAuthenticated(currentUser)"><span class="glyphicon glyphicon-user"></span> Register</a>
+
+                    </li>
+                </ul>
+                </div>
+
             </div>
 
         </div>

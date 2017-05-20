@@ -11,6 +11,7 @@ $metro-light-orange: lighten(#d8765d, 5%);
     height: 85px;
     padding: 20px 0 10px 0;
     background: $metro-regular-orange;
+    box-shadow: 0 0 4px rgba(0,0,0,0.14), 0 4px 8px rgba(0,0,0,0.28);
 
     .navbar-header {
         color: #fff;
@@ -42,6 +43,7 @@ $metro-light-orange: lighten(#d8765d, 5%);
     }
 
     .navbar-nav {
+        width:100%;
         li>a {
            color: $metro-nav-yellow;
            font-size: 16px;
@@ -51,19 +53,27 @@ $metro-light-orange: lighten(#d8765d, 5%);
                background-color: $metro-light-orange;
                border-radius: 30px;
            }
+           &.active {
+            color:#fff;
+            border-bottom: 5px solid #fe9a7a;
+            border-radius: 0px;
+           }
         }
 
         .nav-item {
-            .nav-link.nav-login {
-                border: 2px solid $metro-nav-yellow;
-                padding: 7px 15px 6px;
-                border-radius: 30px;
-                color: $metro-nav-yellow;
-                text-decoration: none;
-                font-size: 1em;
-                margin-left :15px;
-                float: right;
-                font-weight: 600;
+            .nav-link {
+
+                &.nav-login {
+                    border: 2px solid $metro-nav-yellow;
+                    padding: 7px 15px 6px;
+                    border-radius: 30px;
+                    color: $metro-nav-yellow;
+                    text-decoration: none;
+                    font-size: 1em;
+                    margin-left :15px;
+                    float: right;
+                    font-weight: 600;
+                }
             }
         }
     }

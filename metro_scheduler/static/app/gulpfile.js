@@ -72,7 +72,7 @@ gulp.task('watch', function() {
     });
     gulp.watch('./assets/**/*.scss',['build-css']);
     gulp.watch('./js/**/*.scss',['build-css']);
-    gulp.watch('./js/**/*.js', ['build-js']);
+    gulp.watch('./js/**/*.js', ['combine']);
 //    gulp.watch().on('change', gulpLivereload.changed)
 });
 

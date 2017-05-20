@@ -7,9 +7,12 @@ angular.module('metroApp')
     * @name Authentication
     * @desc The Factory to be returned
     */
+    var user;
     var Authentication = {
       register: register,
-      login:login
+      login:login,
+      setUser:setUser,
+      isAuthenticated:isAuthenticated
     };
 
     return Authentication;
@@ -24,8 +27,17 @@ angular.module('metroApp')
     * @param {string} email The email entered by the user
     * @returns {Promise}
     */
+
+    function setUser(aUser){
+        //@todo set cookie user
+        user = aUser;
+    }
+
+    function isAuthenticated(aUser){
+        return(aUser)? true : false;
+    }
     function register(email, password, username) {
-      return $http.post('/api/v1/accounts/register', {
+      return $http.post('/api/accounts/register', {
         username: username,
         password: password,
         email: email
@@ -33,7 +45,7 @@ angular.module('metroApp')
     }
 
      function login(username,  password) {
-      return $http.get('/api/v1/accounts/login', {
+      return $http.get('/api/accounts/login/'+ username, {
         username: username,
         password: password,
       });

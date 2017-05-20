@@ -21,15 +21,17 @@
 
 <body>
 
-    <div>
+    <div ng-controller="navController">
         <div ng-include="'/static/app/js/shared/mainNav/mainNav.html'"></div>
     </div>
 
-    <div>
-        <div ng-include="'/static/app/js/components/dashboard/dashboard.html'"></div>
-    </div>
+    <!--<div>-->
+        <!--<div ng-include="'/static/app/js/components/dashboard/dashboard.html'"></div>-->
+    <!--</div>-->
 
-    <div ng-view></div>
+    <div ng-view>
+
+    </div>
 
     <div>
         <div ng-include="'/static/app/js/shared/footer/footer.html'"></div>

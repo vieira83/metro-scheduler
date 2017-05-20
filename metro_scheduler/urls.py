@@ -21,11 +21,14 @@ from metro import views
 from rest_framework import routers
 
 router = routers.SimpleRouter()
-router.register(r'accounts', AccountViewSet)
+router.register(r'accounts/register', AccountViewSet)
+router.register(r'accounts/login', AccountViewSet)
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(router.urls)),
     url(r'^$', include('metro.urls')),
+    url(r'^(?P<path>.*)/$', views.homepage),
 ]
 

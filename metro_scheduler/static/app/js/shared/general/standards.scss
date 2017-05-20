@@ -354,9 +354,16 @@ input {
   }
 
   &.btn-sm {
-    font-size: 14px;
+    font-size: 13px;
     min-width: auto;
+    padding: 2px 15px;
   }
+
+  &.btn-md {
+    font-size: 15px;
+    padding: 6px 15px;
+  }
+
   &.btn-lg {
     font-size: 24px;
   }

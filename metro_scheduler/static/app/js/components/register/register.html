@@ -3,32 +3,36 @@
 
       <div class="well">
           <h2>Register</h2>
-          <form role="form" ng-submit="vm.register()">
+          <form role="form" ng-submit="register()">
           <div class="form-group">
           <label for="register__firstname">First Name</label>
-          <input type="email" class="form-control" id="register__firstname" ng-model="vm.fname" placeholder="ex. John" />
+          <input type="text" class="form-control" id="register__firstname" ng-model="metro.fname" placeholder="ex. John" />
         </div>
           <div class="form-group">
           <label for="register__lastname">Last Name</label>
-          <input type="email" class="form-control" id="register__lastname" ng-model="vm.lname" placeholder="ex. Doe" />
+          <input type="text" class="form-control" id="register__lastname" ng-model="metro.lname" placeholder="ex. Doe" />
         </div>
         <div class="form-group">
           <label for="register__email">Email</label>
-          <input type="email" class="form-control" id="register__email" ng-model="vm.email" placeholder="ex. john@nor.com" />
+          <input type="email" class="form-control" id="register__email" ng-model="metro.email" placeholder="ex. john@nor.com" />
         </div>
 
         <div class="form-group">
           <label for="register__username">Username</label>
-          <input type="text" class="form-control" id="register__username" ng-model="vm.username" placeholder="ex. john" />
+          <input type="text" class="form-control" id="register__username" ng-model="metro.username" placeholder="ex. john" />
+        </div>
+        <div class="form-group">
+          <label for="register__congregation_id">Cong Number</label>
+          <input type="number" class="form-control" id="register__congregation_id" ng-model="metro.congregation_id" placeholder="0101010" />
         </div>
 
         <div class="form-group">
           <label for="register__password">Password</label>
-          <input type="password" class="form-control" id="register__password" ng-model="vm.password" placeholder="ex. this" />
+          <input type="password" class="form-control" id="register__password" ng-model="metro.password" placeholder="ex. this" />
         </div>
         <div class="form-group">
           <label for="register__confirm_password">Confirm Password</label>
-          <input type="password" class="form-control" id="register__confirm_password" ng-model="vm.confirm_password" placeholder="ex. this" />
+          <input type="password" class="form-control" id="register__confirm_password" ng-model="metro.confirm_password" placeholder="ex. this" />
         </div>
 
         <div class="form-group">

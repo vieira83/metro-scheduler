@@ -4,56 +4,27 @@
             <h2 class="welcome title">Dashboard</h2>
             <div class="user-info">
                 <img ng-src="https://c.disquscdn.com/next/embed/assets/img/noavatar92.7b2fde640943965cc88df0cdee365907.png"/>
-                John Doe
-            </div><br/>
+                <span>{{currentUser.username}}</span>
+            </div>
+            <br/>
             <span class="label-caption">Here you can see, locations, upcoming schedules and your schedule</span>
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="map-container">
-                        <ng-map zoom="11" center="[40.74, -74.18]">
-                            <marker position="[40.74, -74.18]"/>
-                            <shape name="circle" radius="400" center="[40.74,-74.18]" radius="4000"/>
-                            <control name="overviewMap" opened="true"/>
-                        </ng-map>
-                    </div>
-                </div>
-                <div class="col-sm-3 col-sm-offset-1">
-                    <div id="text-87" class="side-map"><h2>Metro Locations <span class="glyphicon glyphicon-triangle-bottom"></span></h2>
-                        <div class="side-map-nav">
-                            <p>
-                            <a href="/how-we-work/open-source-software/java-java-based-apis-frameworks/">
-                                <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp; Bodowin St Park</a>
-                            </p>
-                            <p><a href="/how-we-work/open-source-software/scala/">
-                                <span class="glyphicon glyphicon-hand-right"></span>&nbsp; &nbsp; Fields Corner Station</a>
-
-                            </p>
-                             <p><a href="/how-we-work/open-source-software/scala/">
-                                <span class="glyphicon glyphicon-hand-right"></span>&nbsp; &nbsp; Geneva Ave Mall</a>
-
-                            </p>
-                            <div class="text-center">
-                                <button class="btn btn-primary btn-sm ">New Location</button>
-                            </div>
-                            <br/>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-        <div class="col-sm-8">
-            <div class="pull-right search-container">
-                <input type="text" placeholder="search sechedule"/> <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-            </div>
-        </div>
+
     </div>
+
     <div class="row">
         <div class="col-sm-12">
+            <div class="pull-right search-container">
+                <input type="text" placeholder="search sechedule"/> <span class="glyphicon glyphicon-search"
+                                                                          aria-hidden="true"></span>
+            </div>
+        </div>
+        <div class="col-sm-12">
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-7">
                     <div id="text-88" class="side-map">
-                        <h2>Scheduled
-                        <span class="pull-right">Weekly <span class="glyphicon glyphicon-play"></span> </span>
+                        <h2 class="box-heading">Scheduled
+                            <span class="pull-right">Weekly <span class="glyphicon glyphicon-play pull-right" ></span> </span>
                         </h2>
 
                         <div class="side-map-nav">
@@ -70,48 +41,48 @@
                                     </div>
                                 </div>
                             </div>
-                             <div class="row scheduled-entry">
+                            <div class="row scheduled-entry">
                                 <div class="col-sm-4">
                                     <H5>Monday, Sept 16, 2017</H5>
                                 </div>
-                                <div class="col-sm-5">
-                                     <span>John Doe</span> / <span>Jane Doe</span>
+                                <div class="col-sm-5 people-full-name">
+                                    <span>John Doe</span> / <span>Jane Doe</span>
                                 </div>
                                 <div class="col-sm-3">
                                     <H5>Fields Corner</H5>
 
                                 </div>
                             </div>
-                             <div class="row scheduled-entry">
+                            <div class="row scheduled-entry">
                                 <div class="col-sm-4">
                                     <H5>Tuesday, Sept 17, 2017</H5>
                                 </div>
-                                <div class="col-sm-5">
-                                     <span>John Doe</span> / <span>Jane Doe</span>
+                                <div class="col-sm-5 people-full-name">
+                                    <span>John Doe</span> / <span>Jane Doe</span>
                                 </div>
                                 <div class="col-sm-3">
                                     <H5>Bowdoin St park</H5>
 
                                 </div>
                             </div>
-                             <div class="row scheduled-entry">
+                            <div class="row scheduled-entry">
                                 <div class="col-sm-4">
                                     <H5>Wednesday, Sept 18, 2017</H5>
                                 </div>
-                                <div class="col-sm-5">
-                                     <span>John Doe</span> / <span>Jane Doe</span>
+                                <div class="col-sm-5 people-full-name">
+                                    <span>John Doe</span> / <span>Jane Doe</span>
                                 </div>
                                 <div class="col-sm-3">
                                     <H5>Bowdoin St park</H5>
 
                                 </div>
                             </div>
-                             <div class="row scheduled-entry">
+                            <div class="row scheduled-entry">
                                 <div class="col-sm-4">
-                                    <H5>Thursday, Sept 19   , 2017</H5>
+                                    <H5>Thursday, Sept 19 , 2017</H5>
                                 </div>
-                                <div class="col-sm-5">
-                                     <span>John Doe</span> / <span>Jane Doe</span>
+                                <div class="col-sm-5 people-full-name">
+                                    <span>John Doe</span> / <span>Jane Doe</span>
                                 </div>
                                 <div class="col-sm-3">
                                     <H5>Bowdoin St park</H5>
@@ -121,23 +92,65 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4">
-                    <div id="text-89" class="side-map"><h2>your Schedule <span class="glyphicon glyphicon-triangle-bottom"></span></h2>
+                <div class="col-sm-5">
+                    <div id="text-89" class="side-map"><h2 class="box-heading">your Schedule <span
+                            class="glyphicon glyphicon-triangle-bottom pull-right"></span></h2>
                         <div class="side-map-nav">
-                            <p>
-                            <a href="/how-we-work/open-source-software/java-java-based-apis-frameworks/">
-                                Java and JVM-Related Languages</a>
-                            </p>
-                            <p><a href="/how-we-work/open-source-software/scala/">
-                                Scala and Functional Programming</a>
-                            </p>
-                            <p><a href="/how-we-work/open-source-software/angularjs-single-page-web-applications/">
-                                AngularJS, JavaScript APIs, and Single Web Page Applications</a>
-                            </p>
-                            <p><a href="/how-we-work/open-source-software/spring-framework/">
-                                The Spring Framework</a>
-                            </p>
-                            <p><a href="/open-source-software/big-data-technologies/">Big Data Technologies</a></p>
+                            <div class="row">
+                                <div class="col-sm-12 scheduled-header">
+                                    <div class="col-sm-3">
+                                        <H5>Date</H5>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <H5>People</H5>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <H5>Location</H5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row scheduled-entry">
+                                <div class="col-sm-3">
+                                    <H6>Sept 16, 2017</H6>
+                                </div>
+                                <div class="col-sm-5 people-full-name">
+                                    <h6><span>John Doe</span> / <span>Jane Doe</span></h6>
+                                </div>
+                                <div class="col-sm-4">
+                                    <H6 style="display:inline-block">FC</H6>
+                                    <div style="display:inline-block" class="btn-edit-container">
+                                        <button class="btn btn-primary btn-sm ">Edit</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row scheduled-entry">
+                                <div class="col-sm-3">
+                                    <H6>Sept 16, 2017</H6>
+                                </div>
+                                <div class="col-sm-5 people-full-name">
+                                    <H6><span>John Doe</span> / <span>Jane Doe</span></H6>
+                                </div>
+                                <div class="col-sm-4">
+                                    <H6 style="display:inline-block">FC</H6>
+                                    <div style="display:inline-block" class="btn-edit-container">
+                                        <button class="btn btn-primary btn-sm ">Edit</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row scheduled-entry">
+                                <div class="col-sm-3">
+                                    <H6>Sept 16, 2017</H6>
+                                </div>
+                                <div class="col-sm-5 people-full-name">
+                                    <H6><span>Jane NotDoe</span> / <span>Joseph NotDoe</span></H6>
+                                </div>
+                                <div class="col-sm-4">
+                                    <H6 style="display:inline-block">BD</H6>
+                                    <div style="display:inline-block" class="btn-edit-container">
+                                        <button class="btn btn-primary btn-sm ">Edit</button>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -145,5 +158,40 @@
             </div>
         </div>
         <div class="col-sm-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="map-container">
+                <h2 class="box-heading">View Locations in Map</h2>
+                <ng-map zoom="11" center="[40.74, -74.18]">
+                    <marker position="[40.74, -74.18]"/>
+                    <shape name="circle" radius="400" center="[40.74,-74.18]" radius="4000"/>
+                    <control name="overviewMap" opened="true"/>
+                </ng-map>
+            </div>
+        </div>
+        <div class="col-sm-3 col-sm-offset-1">
+            <div id="text-87" class="side-map"><h2 class="box-heading">Metro Locations <span
+                    class="glyphicon glyphicon-triangle-bottom pull-right"></span></h2>
+                <div class="side-map-nav">
+                    <p>
+                        <a href="/how-we-work/open-source-software/java-java-based-apis-frameworks/">
+                            <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp; Bodowin St Park (BD)</a>
+                    </p>
+                    <p><a href="/how-we-work/open-source-software/scala/">
+                        <span class="glyphicon glyphicon-hand-right"></span>&nbsp; &nbsp; Fields Corner Station (FC)</a>
+
+                    </p>
+                    <p><a href="/how-we-work/open-source-software/scala/">
+                        <span class="glyphicon glyphicon-hand-right"></span>&nbsp; &nbsp; Geneva Ave Mall (GA)</a>
+
+                    </p>
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-sm ">New Location</button>
+                    </div>
+                    <br/>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
